@@ -1,0 +1,56 @@
+.userPage {
+  background-color: rgb(209, 209, 52);
+}
+
+.buttonPill {
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 800;
+  height: 50px;
+  width: 250px;
+}
+
+.listGroupItem {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  font-weight: 800;
+  color: black;
+}
+
+.listGroupItem img {
+  width: 30px;
+  height: 30px;
+}
+
+.bgNone {
+  border: none;
+  background-color: transparent;
+}
+
+.solid {
+  border-top: 1px solid black;
+}
+
+.borderRightLeft {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.homeInput {
+  width: 500px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.postCard {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  background-color: transparent;
+}
+
+.asdasd {
+    justify-content: ;
+}
