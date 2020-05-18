@@ -3,15 +3,17 @@ import { Card, Button, FormControl } from "react-bootstrap";
 import "./UserPage.css";
 import faker from "faker";
 
+let fakeAvatar = faker.internet.avatar();
+
 class UserPageMidCol extends Component {
   render() {
     let post = [];
     for (let i = 0; i < Math.floor(Math.random() * 10) + 3; i++) {
       post.push(
-        <Card key={faker.random.uuid()} className="postCard mb-3">
+        <Card key={faker.random.uuid()} className="postCard mb-1 p-3">
           <Card.Title className="m-2">
-            <img src="https://img.icons8.com/color/48/000000/test-account.png" />{" "}
-            asdadadad – 10m
+            <img style={{ width: "64px", height: "64px", borderRadius: "50%" }} src={faker.internet.avatar()} />{" "}
+            <strong>{faker.name.findName()}</strong> <small>@{faker.internet.userName()}</small> – {Math.floor(Math.random() * 59)}m
           </Card.Title>
           <br />
           <div
@@ -75,16 +77,16 @@ class UserPageMidCol extends Component {
     return (
       <div className="borderRightLeft">
         <Card
-          className="bgNone"
-          style={{ marginBottom: "10px", border: "1px solid red" }}
+          className="postCard"
+          style={{ marginBottom: "10px" }}
         >
           <Card.Header className="bgNone">
-            <h2>Lastest Tweets</h2>
+            <h2>Lastest Pweets</h2>
           </Card.Header>
           <hr className="solid"></hr>
           <Card.Body>
             <Card.Title>
-              <img src="https://img.icons8.com/color/48/000000/test-account.png" />{" "}
+              <img style={{ width: "64px", height: "64px", borderRadius: "50%" }} src={fakeAvatar} />{" "}
               <FormControl
                 className="homeInput mb-3"
                 placeholder="What's happening?"
@@ -94,7 +96,7 @@ class UserPageMidCol extends Component {
             <Card.Text></Card.Text>
             <Card.Footer
               className="bgNone"
-              style={{ marginLeft: "8%", justifyContent: "space-around" }}
+              style={{ marginLeft: "8%" }}
             >
               <span>2 days ago</span>
               <Button variant="primary">Tweet</Button>

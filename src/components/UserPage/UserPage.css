@@ -35,10 +35,11 @@
 .borderRightLeft {
   border-right: 1px solid black;
   border-left: 1px solid black;
+  background-color: black;
 }
 
 .homeInput {
-  width: 500px;
+  width: 80%;
   background-color: transparent;
   border: none;
   font-size: 20px;
@@ -48,9 +49,19 @@
 .postCard {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-  background-color: transparent;
+  background-color: yellow;
 }
 
 .asdasd {
     justify-content: ;
+}
+
+.rightInputPill {
+  width: 80%;
+  background-color: yellow;
+  border: none;
+  font-size: 20px;
+  border-radius: 30px;
+  font-weight: 800;
+  height: 50px;
 }

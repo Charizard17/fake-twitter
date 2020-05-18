@@ -38,23 +38,23 @@ class LoginPage extends Component {
               <h4 className="mb-3">
                 <strong>See what's happening in the world right now</strong>
               </h4>
-              <h6 className="mb-3">Join Twitter today.</h6>
+              <h6 className="mb-3">Join Pwitter today.</h6>
               <FormControl
-                className="mb-3"
+                className="mb-3 inputColor"
                 placeholder="Phone or email"
                 aria-label="Amount (to the nearest dollar)"
               />
               <FormControl
-                className="mb-3"
+                className="mb-3 inputColor"
                 placeholder="Password"
                 aria-label="Amount (to the nearest dollar)"
               />
               <div>
-                <Button className="buttonPill" variant="primary" size="md">
+                <Button className="buttonPill" size="md">
                   Get started
                 </Button>{" "}
                 <span>
-                  Have an account? <a href="">Log in</a>{" "}
+                  Have an account? <a style={{ color: "black", fontSize: "1.1em" }} href="">Log in</a>{" "}
                 </span>
               </div>
             </Card>

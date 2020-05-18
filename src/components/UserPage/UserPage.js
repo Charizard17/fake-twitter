@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import "./UserPage.css";
 import UserPageLeftCol from "./UserPageLeftCol";
 import UserPageMidCol from "./UserPageMidCol";
+import UserPageRightCol from "./UserPageRightCol";
 
 class UserPage extends Component {
   render() {
@@ -15,7 +16,9 @@ class UserPage extends Component {
           <Col sm={7}>
             <UserPageMidCol />
           </Col>
-          <Col sm={3}>3 of 3</Col>
+          <Col sm={3}>
+            <UserPageRightCol />
+          </Col>
         </Row>
       </Container>
     );

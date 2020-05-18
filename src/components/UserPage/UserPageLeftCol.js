@@ -45,8 +45,8 @@ class UserPageLeftCol extends Component {
           <ListGroup.Item className="listGroupItem mb-3" action>
             <img src="https://img.icons8.com/ios/48/000000/more.png" /> More
           </ListGroup.Item>
-          <Button className="buttonPill mb-3" variant="primary" size="md">
-            Get started
+          <Button className="buttonPill mb-3" variant="primary" size="md" style={{ fontSize: "25px", height: "60px" }}>
+            Pweet
           </Button>
         </ListGroup>
       </div>
