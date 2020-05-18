@@ -1,31 +1,68 @@
 import React, { Component } from "react";
 import "./LoginPage.css";
+import { Link } from "react-router-dom";
 import {
   Container,
   Row,
   Col,
-  Badge,
   Card,
   FormControl,
   Button,
 } from "react-bootstrap";
+import search from "./search.png";
+import people from "./people.png";
+import bubble from "./bubble.png";
 
 class LoginPage extends Component {
+  loginClick = (e) => {
+    let phoneOrEmail = document.getElementById("phoneOrEmail");
+    let password = document.getElementById("password");
+    e.preventDefault();
+    if (phoneOrEmail.value !== "" && password.value !== "") {
+      console.log("Log In succesful!");
+      window.location.href = "/userpage"
+    } else {
+      if (phoneOrEmail.value === "" && password.value !== "") {
+        console.log("phoneOrEmail is mandatory!");
+        alert("If you fill inputs and click the button, it will automaticly redirect to the userpage");
+      } else if (phoneOrEmail.value !== "" && password.value === "") {
+        console.log("Password is mandatory!");
+        alert("If you fill inputs and click the button, it will automaticly redirect to the userpage");
+      } else {
+        console.log("Phone or Email and Password cannot be empty!");
+        alert("If you fill inputs and click the button, it will automaticly redirect to the userpage");
+      }
+    }
+  };
   render() {
     return (
-      <Container fluid className="loginPage" >
+      <Container fluid className="loginPage">
         <Row>
           <Col className="bgColorLeft">
             <Card className="leftCard">
               <h5>
-                <Badge variant="primary">Icon</Badge> Follow your interests.
+                <img
+                  style={{ width: "50px", height: "50px" }}
+                  src={search}
+                  alt="search"
+                />{" "}
+                Follow your interests.
               </h5>
               <h5>
-                <Badge variant="primary">Icon</Badge> Hear what people are
-                talking about.
+                <img
+                  style={{ width: "50px", height: "50px" }}
+                  src={people}
+                  alt="people"
+                />{" "}
+                Hear what people are talking about.
               </h5>
               <h5>
-                <Badge variant="primary">Icon</Badge> Join the conversation.
+                <img
+                  style={{ width: "50px", height: "50px" }}
+                  src={bubble}
+                  alt="bubble"
+                />{" "}
+                Join the conversation.
               </h5>
             </Card>
           </Col>
@@ -38,23 +75,32 @@ class LoginPage extends Component {
               <h4 className="mb-3">
                 <strong>See what's happening in the world right now</strong>
               </h4>
-              <h6 className="mb-3">Join Pwitter today.</h6>
+              <h6 className="mb-3">Join Ywitter today.</h6>
               <FormControl
+              id="phoneOrEmail"
                 className="mb-3 inputColor"
                 placeholder="Phone or email"
                 aria-label="Amount (to the nearest dollar)"
               />
               <FormControl
+              id="password"
                 className="mb-3 inputColor"
                 placeholder="Password"
                 aria-label="Amount (to the nearest dollar)"
               />
               <div>
                 <Button className="buttonPill" size="md">
-                  Get started
+                  <Link onClick={this.loginClick} className="getStarted" to="/userpage">Get started</Link>
                 </Button>{" "}
                 <span>
-                  Have an account? <a style={{ color: "black", fontSize: "1.1em" }} href="">Log in</a>{" "}
+                  Have an account?{" "}
+                  <Link
+                  onClick={this.loginClick}
+                    style={{ color: "black", fontSize: "1.1em" }}
+                    to="/userpage"
+                  >
+                    Log in
+                  </Link>{" "}
                 </span>
               </div>
             </Card>

@@ -52,6 +52,14 @@
     color: yellow;
 }
 
+.getStarted {
+    color: yellow;
+}
+
+.getStarted:hover {
+    color: black;
+}
+
 .buttonPill:hover {
     background-color: rgb(146, 146, 21);
     color: black;

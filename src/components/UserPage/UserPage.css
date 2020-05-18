@@ -18,6 +18,10 @@
   color: black;
 }
 
+.listGroupItem:hover {
+  background-color: yellow;
+}
+
 .listGroupItem img {
   width: 30px;
   height: 30px;
@@ -42,8 +46,14 @@
   width: 80%;
   background-color: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 25px;
+  color: black;
   display: inline-block;
+}
+
+.homeInput:focus {
+  background-color: black;
+  color: yellow;
 }
 
 .postCard {
@@ -64,4 +74,13 @@
   border-radius: 30px;
   font-weight: 800;
   height: 50px;
+}
+
+.rightInputPill:focus {
+  background-color: black;
+  color: yellow;
+}
+
+.asd{
+  color: rgb(70, 70, 70);
 }
