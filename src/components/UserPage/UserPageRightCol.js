@@ -66,7 +66,7 @@ class UserPageRightCol extends Component {
     let bottomThing = [];
     for (let i = 0; i < bottomThings.length; i++) {
       bottomThing.push(
-        <h5 style={{ display: "inline-block" }} ><a key={i} style={{ color: "rgb(70, 68, 0)" }} className="mr-2" href={`/${bottomThings[i]}`}>
+        <h5 key={i} style={{ display: "inline-block" }} ><a key={i} style={{ color: "rgb(70, 68, 0)" }} className="mr-2" href={`/${bottomThings[i]}`}>
         {bottomThings[i]}
       </a></h5>
       );

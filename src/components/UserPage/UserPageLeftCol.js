@@ -42,7 +42,7 @@ class UserPageLeftCol extends Component {
             Lists
           </ListGroup.Item>
           <ListGroup.Item className="listGroupItem mb-3" action>
-            <img src="https://img.icons8.com/ios/48/000000/user.png" />
+            <img src={this.props.profilePic} style={{ borderRadius: "50%" }} />
             Profile
           </ListGroup.Item>
           <ListGroup.Item className="listGroupItem mb-3" action>

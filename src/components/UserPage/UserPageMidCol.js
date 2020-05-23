@@ -2,86 +2,47 @@ import React, { Component } from "react";
 import { Card, Button, FormControl } from "react-bootstrap";
 import "./UserPage.css";
 import faker from "faker";
-
-let fakeAvatar = faker.internet.avatar();
+import Posts from "./Posts";
 
 class UserPageMidCol extends Component {
-  render() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      newYweets: [],
+      initialYweets: [],
+    };
+    this.textInput = React.createRef();
+  }
+
+  componentDidMount() {
+    let initialYweets = this.getInitalPostsFromFaker();
+    this.setState({ initialYweets });
+    console.log(initialYweets);
+  }
+
+  newPost = () => {
+    let newYweets = this.state.newYweets;
+    if (this.textInput.current.value !== "") {
+      newYweets.unshift(this.textInput.current.value);
+      this.setState({ newYweets });
+    }
+  };
+  getInitalPostsFromFaker() {
     let post = [];
     for (let i = 0; i < Math.floor(Math.random() * 10) + 3; i++) {
-      post.push(
-        <Card key={faker.random.uuid()} className="postCard mb-1 p-3">
-          <Card.Title className="m-2">
-            <img
-              style={{ width: "64px", height: "64px", borderRadius: "50%" }}
-              src={faker.internet.avatar()}
-            />{" "}
-            <strong>{faker.name.findName()}</strong>{" "}
-            <small>@{faker.internet.userName()}</small> –{" "}
-            {Math.floor(Math.random() * 59)}m
-          </Card.Title>
-          <br />
-          <div
-            style={{
-              width: "90%",
-              marginLeft: "8%",
-            }}
-          >
-            {faker.lorem.paragraph()}
-          </div>
-          <div
-            className="mb-3"
-            style={{
-              width: "90%",
-              height: "300px",
-              marginLeft: "8%",
-              borderRadius: "20px",
-              backgroundColor: `${faker.internet.color()}`,
-            }}
-          ></div>
-          <div
-            className="btn-group-toggle d-flex justify-content-around mb-2"
-            data-toggle="buttons"
-          >
-            <label className="btn active">
-              <input type="checkbox" defaultChecked />
-              <img
-                className="mr-2"
-                style={{ width: "25px", height: "25px" }}
-                src="https://img.icons8.com/ios/48/000000/topic.png"
-              />{" "}
-              {Math.floor(Math.random() * 100)}
-            </label>
-            <label className="btn active">
-              <input type="checkbox" defaultChecked />
-              <img
-                className="mr-2"
-                style={{ width: "25px", height: "25px" }}
-                src="https://img.icons8.com/ios/48/000000/retweet.png"
-              />{" "}
-              {Math.floor(Math.random() * 300)}
-            </label>
-            <label className="btn active">
-              <input type="checkbox" defaultChecked />
-              <img
-                className="mr-2"
-                style={{ width: "25px", height: "25px" }}
-                src="https://img.icons8.com/ios/48/000000/hearts.png"
-              />{" "}
-              {Math.floor(Math.random() * 1000)}
-            </label>
-            <label className="btn active">
-              <input type="checkbox" defaultChecked />
-              <img
-                className="mr-2"
-                style={{ width: "25px", height: "25px" }}
-                src="https://img.icons8.com/material-rounded/48/000000/share-rounded.png"
-              />
-            </label>
-          </div>
-        </Card>
-      );
+      post.push({
+        uuid: faker.random.uuid(),
+        avatar: faker.internet.avatar(),
+        name: faker.name.findName(),
+        username: faker.internet.userName(),
+        paragraph: faker.lorem.paragraph(),
+        color: faker.internet.color(),
+      });
     }
+    return post;
+  }
+
+  render() {
     return (
       <div className="borderRightLeft">
         <Card className="postCard" style={{ marginBottom: "10px" }}>
@@ -102,9 +63,10 @@ class UserPageMidCol extends Component {
             <Card.Title>
               <img
                 style={{ width: "64px", height: "64px", borderRadius: "50%" }}
-                src={fakeAvatar}
+                src={this.props.profilePic}
               />{" "}
               <FormControl
+                ref={this.textInput}
                 className="homeInput mb-3"
                 placeholder="What's happening?"
                 aria-label="Amount (to the nearest dollar)"
@@ -139,6 +101,7 @@ class UserPageMidCol extends Component {
                 />
               </div>
               <Button
+                onClick={this.newPost}
                 className="buttonPill mb-3"
                 style={{
                   fontSize: "25px",
@@ -158,8 +121,30 @@ class UserPageMidCol extends Component {
           </Card.Body>
         </Card>
         <br />
-        <br />
-        {post}
+        {this.state.newYweets.map((element, i) => {
+          return (
+            <Posts
+              key={faker.random.uuid()}
+              avatar={faker.internet.avatar()}
+              name={faker.name.findName()}
+              username={faker.internet.userName()}
+              paragraph={element}
+              color={faker.internet.color()}
+            />
+          );
+        })}
+        {this.state.initialYweets.map((element) => {
+          return (
+            <Posts
+              key={element.uuid}
+              avatar={element.avatar}
+              name={element.name}
+              username={element.username}
+              paragraph={element.paragraph}
+              color={element.color}
+            />
+          );
+        })}
       </div>
     );
   }

@@ -1,0 +1,81 @@
+.getStarted {
+    height: 100vh;
+    background-image: url("./twitter-logo-black.png");
+    background-size: 1700px;
+    background-color: rgb(146, 146, 21);
+    background-position: left;
+    background-position-x: -100px;
+    background-repeat: no-repeat;
+}
+
+.bgColorLeft {
+    background-color: transparent;
+    color: white;
+    height: 100vh;
+    position: relative;
+}
+
+.bgColorRight {
+    background-color: rgb(225, 228, 43);
+    color: black;
+    height: 100vh;
+    position: relative;
+}
+
+.leftCard {
+    background-color: transparent;
+    color: yellow;
+    border: none;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.rightCard {
+    background-color: transparent;
+    width: 50%;
+    border: none;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.buttonPill {
+    border-radius: 30px;
+    background-color: black;
+    color: yellow;
+}
+
+.getStartedButton {
+    color: yellow;
+}
+
+.getStarted:hover {
+    color: black;
+}
+
+.buttonPill:hover {
+    background-color: rgb(146, 146, 21);
+    color: black;
+}
+
+.inputColor {
+    background-color: rgb(168, 168, 23);
+    color: black;
+    font-size: 1.1em;
+}
+
+.inputColor::placeholder {
+    color: black;
+}
+
+.inputColor:focus {
+    background-color: black;
+    color: yellow;
+}
