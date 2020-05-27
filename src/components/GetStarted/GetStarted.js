@@ -79,7 +79,7 @@ class LoginPage extends Component {
               <FormControl
               id="phoneOrEmail"
                 className="mb-3 inputColor"
-                placeholder="Phone or email"
+                placeholder="Phone, email or username"
                 aria-label="Amount (to the nearest dollar)"
               />
               <FormControl
