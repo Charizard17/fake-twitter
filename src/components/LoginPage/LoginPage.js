@@ -8,7 +8,7 @@ class LoginPage extends Component {
     let phoneOrEmail = document.getElementById("phoneOrEmail");
     let password = document.getElementById("password");
     e.preventDefault();
-    if (phoneOrEmail.value !== "" && password.value !== "") {
+    if (phoneOrEmail.value === "admin" && password.value === "admin") {
       console.log("Log In succesful!");
       window.location.href = "/userpage";
     } else {
@@ -49,6 +49,7 @@ class LoginPage extends Component {
             id="password"
             className="mb-3 loginInput"
             placeholder="Password"
+            type="password"
             aria-label="Amount (to the nearest dollar)"
           />
           <Button onClick={this.loginClick} className="loginButtonPill">
