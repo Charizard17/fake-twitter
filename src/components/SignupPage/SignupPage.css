@@ -1,4 +1,4 @@
-.loginPage {
+.signupPage {
   background-color: rgb(209, 209, 52);
   height: 100vh;
   padding-top: 3rem;
@@ -17,29 +17,29 @@
     cursor: pointer;
 }
 
-.loginH1 {
+.signupH1 {
     text-align: center;
     font-size: 3.5rem;
     margin-top: 2rem;
 }
 
-.loginInput {
+.signupInput {
     background-color: rgb(168, 168, 23);
     color: black;
     font-size: 1.7rem;
     margin-top: 2rem;
 }
 
-.loginInput::placeholder {
+.signupInput::placeholder {
     color: black;
 }
 
-.loginInput:focus {
+.signupInput:focus {
     background-color: black;
     color: yellow;
 }
 
-.loginButtonPill {
+.signupButtonPill {
     display: block;
     width: 100%;
     font-size: 2rem;
@@ -49,16 +49,16 @@
     margin-top: 2rem;
 }
 
-.loginButtonPill:hover {
+.signupButtonPill:hover {
     background-color: rgb(146, 146, 21);
     color: black;
 }
 
-.loginButtonPill .loginButton {
+.signupButtonPill .signupButton {
     color: yellow;
 }
 
-.loginButtonPill .loginButton:hover {
+.signupButtonPill .signupButton:hover {
     color: black;
 }
 

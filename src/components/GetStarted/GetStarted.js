@@ -20,17 +20,17 @@ class LoginPage extends Component {
     e.preventDefault();
     if (phoneOrEmail.value !== "" && password.value !== "") {
       console.log("Log In succesful!");
-      window.location.href = "/userpage"
+      window.location.href = "/signup"
     } else {
       if (phoneOrEmail.value === "" && password.value !== "") {
         console.log("phoneOrEmail is mandatory!");
-        alert("If you fill inputs and click the button, it will automaticly redirect to the userpage");
+        alert("If you fill inputs and click the button, it will automaticly redirect to the signup page");
       } else if (phoneOrEmail.value !== "" && password.value === "") {
         console.log("Password is mandatory!");
-        alert("If you fill inputs and click the button, it will automaticly redirect to the userpage");
+        alert("If you fill inputs and click the button, it will automaticly redirect to the signup page");
       } else {
         console.log("Phone or Email and Password cannot be empty!");
-        alert("If you fill inputs and click the button, it will automaticly redirect to the userpage");
+        alert("If you fill inputs and click the button, it will automaticly redirect to the signup page");
       }
     }
   };
