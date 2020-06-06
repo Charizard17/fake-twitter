@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./LoginPage.css";
-import { Link } from "react-router-dom";
 import { Container, FormControl, Button } from "react-bootstrap";
 
 class LoginPage extends Component {
@@ -59,9 +58,7 @@ class LoginPage extends Component {
             aria-label="Amount (to the nearest dollar)"
           />
           <Button onClick={this.loginClick} className="loginButtonPill">
-            <Link className="loginButton" to="/userpage">
-              Log in
-            </Link>
+            Log in
           </Button>
           <div className="bottomAdiv">
             <a className="bottomA" href="#!">
